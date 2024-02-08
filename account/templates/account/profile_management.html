@@ -1,0 +1,56 @@
+{% extends 'core/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+        <title> Profile Management | My Planner</title>
+
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3>Update your username and email</h3>
+
+        <br>
+
+           <form method="POST" action="." autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{UserUpdateForm|crispy}}
+
+            <br>
+
+            <button class="btn btn-outline-primary btn-md w-100 p-3" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i>
+                     &nbsp; Update </button>
+
+        </form>
+    </div>
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3>Update your profile picture</h3>
+
+        <br>
+
+           <form method="POST" action="." autocomplete="off" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ProfileUpdateForm|crispy}}
+
+            <br>
+
+            <button class="btn btn-outline-primary btn-md w-100 p-3" type="submit">&nbsp;<i class="fa fa-pencil" aria-hidden="true"></i>
+                     &nbsp;Update profile picture</button>
+
+        </form>
+    </div>
+
+    <br>
+
+    <div  class="container bg-white shadow-md p-5 form-layout">
+        <h3>Delete your account</h3>
+
+        <br>
+
+        <a href="{% url 'delete_account' %}">Proceed to delete your account</a>
+    </div>
+{% endblock %}

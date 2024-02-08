@@ -1,0 +1,29 @@
+{% extends 'core/navbar.html' %}
+
+{% block content %}
+
+        <title> My Profile | My Planner</title>
+
+
+    <div class="text-center container bg-white shadow-md p-5 form-layout">
+
+        <h2><i class="fa fa-user" aria-hidden="true"></i> &nbsp;{{user}}</h2>
+
+        <br>
+
+        <h5>Welcome, {{user}}!</h5>
+
+        <br>
+
+        <img style="width:90px; height:70px;" src="{{profile_pic.profile_pic.url}}">
+
+        <br>
+        <br>
+
+        <a class="btn btn-outline-danger btn-md w-100 p-2" type="submit" href="{% url 'logout' %}"> <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp;Logout</a>
+
+    </div>
+
+{% endblock %}
+
+

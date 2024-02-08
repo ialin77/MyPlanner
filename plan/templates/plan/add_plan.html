@@ -1,0 +1,25 @@
+{% extends 'core/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <title> Add Plan | My Planner</title>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3>Add Plan</h3>
+
+        <br>
+
+           <form method="POST" action="." autocomplete="off">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            <br>
+
+            <button class="btn btn-outline-primary btn-md w-100 p-3" type="submit">&nbsp;<i class="fa fa-plus-circle" aria-hidden="true"></i>
+                 &nbsp;Add Plan</button>
+
+        </form>
+    </div>
+{% endblock %}

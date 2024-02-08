@@ -1,0 +1,38 @@
+{% extends 'core/navbar.html' %}
+
+{% block content %}
+
+    <title> My Plans | My Planner</title>
+
+
+    {% for plan in plans %}
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3>{{plan.title}}</h3>
+        <br>
+        <h5>{{plan.content}}</h5>
+        <br>
+        <h5>Date: {{plan.date}}</h5>
+
+        <h5>At, {{plan.time}}</h5>
+        <br> <br>
+
+        Created: {{plan.created_at}}
+
+        <br>
+        <br>
+        <h5>By, {{plan.user}}</h5>
+        <br> <br>
+        <a class="btn btn-outline-primary btn-md w-100 p-3" type="submit" href="{% url 'update_plan' plan.id %}"><i class="fa fa-pencil" aria-hidden="true"></i>
+                     &nbsp;Update </a>
+        <br> <br>
+        <a class="btn btn-outline-danger btn-md w-100 p-3" type="submit" href="{% url 'delete_plan' plan.id %}"><i class="fa fa-trash" aria-hidden="true"></i>
+            &nbsp;Delete </a>
+
+
+    </div>
+
+        <br>
+
+{% endfor %}
+{% endblock %}

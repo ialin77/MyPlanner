@@ -1,0 +1,46 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+<html>
+
+    <head>
+        <title>Register | My Planner</title>
+    </head>
+
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/morph/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h3>Create your account</h3>
+
+        <h5>Plan your time efficient!</h5>
+
+        <br>
+        <br>
+
+        <form method="POST" action="." autocomplete="off">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            <br>
+
+            <button class="btn btn-outline-primary btn-md w-100 p-3" type="submit"> <i class="fa fa-user-plus" aria-hidden="true"></i>
+    &nbsp; Create your account</button>
+
+        </form>
+
+          <div class="text-center">
+            <a href="{% url 'login' %}">Already have an account?</a>
+        </div>
+
+
+    </div>
+
+    <br>
+
+</html>
+

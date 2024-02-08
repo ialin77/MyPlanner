@@ -1,0 +1,26 @@
+{% extends 'core/navbar.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+        <title> Update Plan | My Planner</title>
+
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+
+        <h3>Update your Plan</h3>
+
+        <br>
+
+           <form method="POST" action="." autocomplete="off">
+            {% csrf_token %}
+            {{form|crispy}}
+
+            <br>
+
+            <button class="btn btn-outline-primary btn-md w-100 p-3" type="submit"><i class="fa fa-pencil" aria-hidden="true"></i>
+                     &nbsp;Update Plan</button>
+
+        </form>
+    </div>
+{% endblock %}
